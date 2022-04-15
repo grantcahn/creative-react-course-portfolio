@@ -36,7 +36,9 @@ const GlobalStyle = createGlobalStyle`
       color:white;
   }
   h4{
+      font-size: 2rem;
       font-weight: bold;
+      margin-bottom: 2rem;
   }
   a{
       font-size: 1.1rem;
