@@ -24,6 +24,9 @@ const GlobalStyle = createGlobalStyle`
           font-size: 80%;
       }
   }
+  img {
+  overflow-clip-margin: padding-box;
+}
 
   body{
       background: var(--color-bg);

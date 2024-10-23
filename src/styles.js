@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export const GenericSection = styled(motion.div)`
   min-height: 90vh;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   color: var(--color-primary);
   @media (max-width: 1300px) {
     padding: 2rem 2rem;
@@ -78,6 +78,7 @@ export const Image = styled.div`
     width: 100%;
     height: 90vh;
     object-fit: cover;
+    display: block;
   }
 `
 
