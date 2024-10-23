@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   
@@ -6,22 +6,32 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      --color-bg: #ffffff;
+      --color-bg2: #ECECEC;
+      --color-text: #333;
+	  --color-primary: #202020;
+	  --color-secondary: #fef200;
+	  --color-tertiary: #171717;
+      --color-quaternary: #ffffff;
+	  --color-error: #e74c3c;
+  }
+
+  html {
+      @media (max-width: 1700px) {
+          font-size: 75%;
+      }
+      @media (max-width: 1300px) {
+          font-size: 80%;
+      }
   }
 
   body{
-      background: #1b1b1b;
+      background: var(--color-bg);
       font-family: 'Inter', sans-serif;
-/*font-family: 'Lobster', cursive; */
+      overflow-x: hidden;
   }
-  button{
-      font-weight: bold;
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      cursor: pointer;
-      padding: 1rem 2rem;
-      border: 3px solid #23d997;
-      background: transparent;
-      color: white;
+  button{     
+      cursor: pointer;      
       transition: all 0.3s ease;
       &:hover{
           background-color: #23d997;
@@ -31,10 +41,7 @@ const GlobalStyle = createGlobalStyle`
   h2{
       font-weight: lighter;
       font-size: 4rem;
-  }
-  h3{
-      color:white;
-  }
+  }  
   h4{
       font-size: 2rem;
       font-weight: bold;
@@ -48,12 +55,11 @@ const GlobalStyle = createGlobalStyle`
       color: #23d997;
   }
   p{
-      padding: 3rem 0rem;
-      color:#ccc;
+      color: var( --color-text);
       font-size: 1.4rem;
       line-height: 150%;
   }
 
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle
