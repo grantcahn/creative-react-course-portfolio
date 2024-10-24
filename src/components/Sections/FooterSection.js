@@ -1,7 +1,4 @@
 import styled from 'styled-components'
-
-import { About, GenericSection } from '../../styles'
-import { useScroll } from '../useScroll'
 import Socials from '../Socials'
 import email from '../../img/icons/email.svg'
 import phone from '../../img/icons/phone.svg'
@@ -34,7 +31,7 @@ const ContactDetail = ({icon, title, link}) => {
       justifyContent: 'center',
       gap: '1rem',
     }}>
-      <img src={icon} style={{
+      <img src={icon} alt={`${title} icon`} style={{
         width: '30px',
         height: '30px',
         
@@ -45,7 +42,6 @@ const ContactDetail = ({icon, title, link}) => {
 }
 
 const FooterSection = () => {
-  const [element, controls] = useScroll()
   return (
       <Footer>  
           <div>

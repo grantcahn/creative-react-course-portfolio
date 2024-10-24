@@ -13,7 +13,7 @@ import infotvIcon from '../../img/icons/infotv-icon.png'
 import cycadIcon from '../../img/icons/cycad-icon.png'
 import ProjectCard from '../ProjectCard'
 
-const projects = [
+const projectsList = [
   {
     link: 'https://aflmint.com.au/',
     imgSrc: afl,
@@ -100,33 +100,23 @@ const ProjectsSection = () => {
           <SectionTitle title={'My portfolio'} />
           <h2>Take a look at the latest projects I’ve worked on</h2>
           <div className="left">
-            {projects
+            {projectsList
               .filter((p) => p.side === 'left')
-              .map((skill, index) => (
+              .map((project, index) => (
                 <ProjectCard
                   key={index}
-                  icon={skill.icon}
-                  link={skill.link}
-                  imgSrc={skill.imgSrc}
-                  title={skill.title}
-                  skills={skill.skills}
-                  brandName={skill.brandName}
+                  {...project}
                 />
               ))}
           </div>
         </div>
         <div className="right">
-          {projects
+          {projectsList
             .filter((p) => p.side === 'right')
-            .map((skill, index) => (
+            .map((project, index) => (
               <ProjectCard
                 key={index}
-                icon={skill.icon}
-                link={skill.link}
-                imgSrc={skill.imgSrc}
-                title={skill.title}
-                skills={skill.skills}
-                brandName={skill.brandName}
+                {...project}
               />
             ))}
         </div>

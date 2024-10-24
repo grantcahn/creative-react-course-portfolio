@@ -4,8 +4,7 @@ import circle from '../../img/circle texture.png'
 import { About, Description, Image, Hide } from '../../styles'
 // Framer Motion
 import { motion } from 'framer-motion'
-import { titleAnim, fade, photoAnim } from '../../animation'
-import Wave from '../Wave'
+import { titleAnim, photoAnim } from '../../animation'
 
 const HeroSection = () => {
   return (

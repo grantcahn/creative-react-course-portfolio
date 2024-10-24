@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { About, GenericSection } from '../../styles'
+import { GenericSection } from '../../styles'
 import { useScroll } from '../useScroll'
 import { scrollReveal } from '../../animation'
 import SectionTitle from '../SectionTitle'

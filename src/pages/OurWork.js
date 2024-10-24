@@ -27,11 +27,11 @@ const OurWork = () => {
       animate="show"
       style={{ background: '#fff' }}
     >
-      <motion.div variants={sliderContainer}>
-        <Frame1 variants={slider}></Frame1>
-        <Frame2 variants={slider}></Frame2>
-        <Frame3 variants={slider}></Frame3>
-        <Frame4 variants={slider}></Frame4>
+      <motion.div variants={sliderContainer} style={{height: '50vh', background: '#000000'}}>
+        <Frame1 variants={slider}>test1</Frame1>
+        <Frame2 variants={slider}>test3</Frame2>
+        <Frame3 variants={slider}>test4</Frame3>
+        <Frame4 variants={slider}>test5</Frame4>
       </motion.div>
       <Movie>
         <motion.h2 variants={fade}>The Athlete</motion.h2>
