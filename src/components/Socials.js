@@ -30,13 +30,20 @@ const socialLinks = [
 const SocialIcon = ({ imgSrc, title, link }) => {
   return (
     <a href={link} target="_blank" rel="noreferrer">
-      <div>
+      <div style={{
+          padding: '0.6rem',
+          borderRadius: '50%',
+          background: 'var(--color-bg2)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+      }}>
         <img
           src={imgSrc}
           alt={title}
           style={{
             width: '2rem',
-            height: '2rem',
+            maxHeight: '2rem',
           }}
         />
       </div>
