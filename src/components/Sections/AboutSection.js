@@ -9,7 +9,6 @@ import euroleague from '../../img/EL-logo.svg'
 import qpr from '../../img/icons/qpr-icon.png'
 import afl from '../../img/icons/AFL.png'
 import gresini from '../../img/gresini-logo.png'
-import sportpass from '../../img/sportpass-logo.svg'
 
 const brands = [
   {
@@ -32,10 +31,6 @@ const brands = [
     name: 'Gresini MotoGP',
     image: gresini,
   },
-  {
-    name: 'SPORTPASS',
-    image: sportpass,
-  },
 ]
 
 const AboutSection = () => {
@@ -44,14 +39,14 @@ const AboutSection = () => {
     <AboutMe variants={fade} animate={controls} initial="hidden" ref={element}>
       <div className="aboutme">
         <SectionTitle title={'About Me'} />
-        <div className='section-grid'>
+        <div className="section-grid">
           <SubSection>
             <h2>I’ve been developing websites since 2018</h2>
             <p>
-              What started as a hobby turned into a passion. I have been creating
-              websites for the past 6 years. I have worked with various clients
-              and have helped them to improve their online presence. I can help
-              you to create a professional website for your business.
+              What started as a hobby turned into a passion. I have been
+              creating websites for the past 6 years. I have worked with various
+              clients and have helped them to improve their online presence. I
+              can help you to create a professional website for your business.
             </p>
           </SubSection>
           <SubSection>
@@ -66,15 +61,28 @@ const AboutSection = () => {
               </Counter>
             </div>
             <p>
-              I started with good old HTML and CSS, WordPress and then moved on to
-              using React, Next.js and Svelte. Styling disciplines such as I have
-              mainly been responsible for the front-end development of websites. I
-              have also worked with back-end technologies like Nodejs and MongoDB.
+              I started with good old HTML and CSS, WordPress and then moved on
+              to using React, Next.js and Svelte. Styling disciplines such as I
+              have mainly been responsible for the front-end development of
+              websites. I have also worked with back-end technologies like
+              Nodejs and MongoDB.
             </p>
           </SubSection>
         </div>
       </div>
-        <div className='brand-section'><p>Brands I've worked with</p><div className="brands"></div></div>
+      <div className="brand-section">
+        <p>Brands I've worked with:</p>
+        <div className="brands">
+          {brands.map((brand, index) => (
+            <img
+              src={brand.image}
+              alt={brand.name}
+              key={index}
+              className="brand-logo"
+            />
+          ))}
+        </div>
+      </div>
     </AboutMe>
   )
 }
@@ -82,10 +90,35 @@ const AboutSection = () => {
 //Styled Components
 const AboutMe = styled(GenericSection)`
   background-color: var(--color-bg2);
-  section-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .section-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
+  }
+  .brand-section {
+    border-top: 1px solid #777777;
+    margin-top: 6rem;
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6rem;
+    p {
+      font-weight: 600;
+    }
+  }
+  .brand-logo {
+    height: 3.5rem;
+    filter: grayscale(100%);
+  }
+  .brands {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
   }
   h2 {
     padding-bottom: 1rem;
