@@ -1,11 +1,12 @@
 import React from 'react'
 
-const ScrollButton = ({ direction, isActive }) => {
+const ScrollButton = ({ direction, isActive, onClick }) => {
   const orientation = direction === 'left' ? '' : 'rotate(180deg)'
   const color = 'var(--color-quaternary)'
 
   return (
     <button
+      onClick={onClick}
       style={{
         borderRadius: '50%',
         border: 'none',

@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { GenericSection } from '../../styles'
@@ -24,6 +25,7 @@ import github from '../../img/github.svg'
 import gitlab from '../../img/gitlab.svg'
 import gsap from '../../img/gsap.svg'
 import wordpress from '../../img/wordpress.svg'
+import aws from '../../img/aws.svg'
 
 const skills = [
   {
@@ -74,6 +76,11 @@ const skills = [
     description: 'I have been working with WordPress for the past 6 years.',
   },
   {
+    imgSrc: aws,
+    title: 'AWS Hosting',
+    description: 'I have been working with AWS for the past 2 years.',
+  },
+  {
     imgSrc: gsap,
     title: 'GSAP',
     description: 'I have been working with GSAP for the past 2 years.',
@@ -104,20 +111,56 @@ const skills = [
 
 const SkillsSection = () => {
   const [element, controls] = useScroll()
+  const [translate, setTranslate] = useState(0)
+
+  const handleScrollButtonClick = (direction) => {
+    if (translate === -220 && direction === 'right') {
+      setTranslate(-224)
+      return
+    }
+    if (translate === -224 && direction === 'right') {
+      setTranslate(0)
+      return
+    }
+    if (translate === -4 && direction === 'left') {
+      setTranslate(0)
+      return
+    }
+    if (translate === 0 && direction === 'left') {
+      setTranslate(-224)
+      return
+    }
+    const newTranslate = direction === 'left' ? translate + 22 : translate - 22
+    console.log(`Old translate: ${translate}, New translate: ${newTranslate}`)
+    setTranslate(newTranslate)
+  }
+
+  console.log(`Current translate: ${translate}`)
+
+  console.log(translate)
+
   return (
     <div style={{ padding: '5rem 0rem' }}>
       <Skills
-        variants={scrollReveal}
-        ref={element}
-        animate={controls}
-        initial="hidden"
+      // variants={scrollReveal}
+      // ref={element}
+      // animate={controls}
+      // initial="hidden"
       >
         <SectionTitle title={'My skills'} />
         <div className="carousel-buttons">
           <h2>My extensive list of skills</h2>
           <div className="chevron-buttons">
-            <ScrollButton direction="left" isActive={false} />
-            <ScrollButton direction="right" isActive={true} />
+            <ScrollButton
+              direction="left"
+              isActive={false}
+              onClick={() => handleScrollButtonClick('left')}
+            />
+            <ScrollButton
+              direction="right"
+              isActive={true}
+              onClick={() => handleScrollButtonClick('right')}
+            />
           </div>
         </div>
         <div className="skills-section">
@@ -128,6 +171,7 @@ const SkillsSection = () => {
               imgSrc2={skill.imgSrc2}
               title={skill.title}
               description={skill.description}
+              shift={translate}
             />
           ))}
         </div>
@@ -149,8 +193,7 @@ const Skills = styled(GenericSection)`
     gap: 2rem;
   }
   .skills-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
     gap: 2rem;
     padding-top: 2rem;
   }
