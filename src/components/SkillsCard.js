@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import StarsRating from './StarsRating'
 
-const SkillsCard = ({ imgSrc, imgSrc2, title, description, shift }) => {
+const SkillsCard = ({ imgSrc, imgSrc2, title, description, shift, rating }) => {
   return (
     <Card
       style={{
@@ -13,6 +14,7 @@ const SkillsCard = ({ imgSrc, imgSrc2, title, description, shift }) => {
         {imgSrc2 && <Image src={imgSrc2} alt="" />}
       </div>
       <h4>{title}</h4>
+      <StarsRating rating={rating} />
       <p>{description}</p>
       <div
         style={{

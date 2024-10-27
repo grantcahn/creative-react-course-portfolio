@@ -14,22 +14,27 @@ const brands = [
   {
     name: 'Animoca Brands',
     image: animoca,
+    link: 'https://www.animocabrands.com/',
   },
   {
     name: 'Euroleague',
     image: euroleague,
+    link: 'https://www.euroleague.net/',
   },
   {
     name: 'QPR',
     image: qpr,
+    link: 'https://www.qpr.co.uk/',
   },
   {
     name: 'AFL',
     image: afl,
+    link: 'https://www.afl.com.au/',
   },
   {
     name: 'Gresini MotoGP',
     image: gresini,
+    link: 'https://gresiniracing.com/',
   },
 ]
 
@@ -44,9 +49,9 @@ const AboutSection = () => {
             <h2>I’ve been developing websites since 2018</h2>
             <p>
               What started as a hobby turned into a passion. I have been
-              creating websites for the past 6 years. I have worked with various
-              clients and have helped them to improve their online presence. I
-              can help you to create a professional website for your business.
+              creating websites for the past 6 years. I have also worked on Web3
+              projects, mostly assisting on Front-End, UI/UX work but also
+              helping out with Blockchain development.
             </p>
           </SubSection>
           <SubSection>
@@ -56,16 +61,17 @@ const AboutSection = () => {
                 <h3>Years of experience</h3>
               </Counter>
               <Counter>
-                <h1>10</h1>
+                <h1>10+</h1>
                 <h3>Successful Projects</h3>
               </Counter>
             </div>
             <p>
-              I started with good old HTML and CSS, WordPress and then moved on
-              to using React, Next.js and Svelte. Styling disciplines such as I
-              have mainly been responsible for the front-end development of
-              websites. I have also worked with back-end technologies like
-              Nodejs and MongoDB.
+              I began my journey with HTML and CSS, and later transitioned to
+              using modern frameworks like React, Next.js, and Svelte. For
+              styling, I rely on TailwindCSS, which has been instrumental in my
+              front-end development work. Additionally, I have experience with
+              back-end technologies such as Express.js, MongoDB, and AWS for
+              static hosting.
             </p>
           </SubSection>
         </div>
@@ -74,12 +80,14 @@ const AboutSection = () => {
         <p>Brands I've worked with:</p>
         <div className="brands">
           {brands.map((brand, index) => (
-            <img
-              src={brand.image}
-              alt={brand.name}
-              key={index}
-              className="brand-logo"
-            />
+            <a href={brand.link} target="_blank" rel="noreferrer">
+              <img
+                src={brand.image}
+                alt={brand.name}
+                key={index}
+                className="brand-logo"
+              />
+            </a>
           ))}
         </div>
       </div>
@@ -95,6 +103,7 @@ const AboutMe = styled(GenericSection)`
   justify-content: space-between;
   .section-grid {
     display: grid;
+    align-items: end;
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
   }

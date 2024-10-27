@@ -33,79 +33,103 @@ const skills = [
     imgSrc2: css,
     title: 'HTML & CSS',
     description: 'I have been working with HTML and CSS for the past 6 years.',
+    rating: 5,
   },
   {
     imgSrc: tailwind,
     title: 'Tailwind CSS',
-    description: 'I have been working with Tailwind CSS for the past 2 years.',
+    description:
+      'Tailwind CSS has been my go-to CSS framework for the past 2 and a half years.',
+    rating: 5,
   },
   {
     imgSrc: materialUi,
     title: 'Material UI',
-    description: 'I have been working with Material UI for the past 2 years.',
+    description:
+      'I have been using Material UI for the past 2 and a half years.',
+    rating: 4,
   },
   {
     imgSrc: javascript,
     imgSrc2: typescript,
     title: 'JavaScript',
-    description: 'I have been working with JavaScript for the past 6 years.',
+    description:
+      'I have experience using JavaScript as well as Typescript for the past 4 years.',
+    rating: 5,
   },
   {
     imgSrc: react,
     title: 'React',
-    description: 'I have been working with React for the past 4 years.',
+    description:
+      'I have been working on projects built with React for the past 3 years.',
+    rating: 5,
   },
   {
     imgSrc: nextjs,
     title: 'Next.js',
-    description: 'I have been working with Next.js for the past 2 years.',
+    description: 'I have been working on Next.js for the past 2 years.',
+    rating: 4,
   },
   {
     imgSrc: svelte,
     title: 'Svelte',
-    description: 'I have been working with Svelte for the past 1 year.',
+    description:
+      'I have built a couple of projects using Svelte and SvelteKit.',
+    rating: 4,
   },
   {
     imgSrc: flow,
     title: 'Flow',
-    description: 'I have been working with Flow for the past 2 years.',
+    description:
+      'I have written a couple of smart contracts using Cadence and worked on some big NFT projects.',
+    rating: 3,
   },
   {
     imgSrc: wordpress,
     title: 'WordPress',
-    description: 'I have been working with WordPress for the past 6 years.',
+    description: 'I have built multiple websites using WordPress.',
+    rating: 4,
   },
   {
     imgSrc: aws,
     title: 'AWS Hosting',
-    description: 'I have been working with AWS for the past 2 years.',
+    description:
+      'I have some familiarity with AWS hosting and have deployed a couple of static projects on AWS.',
+    rating: 2,
   },
   {
     imgSrc: gsap,
     title: 'GSAP',
-    description: 'I have been working with GSAP for the past 2 years.',
+    description:
+      'I have built multiple GSAP animations that were used in React projects.',
+    rating: 3,
   },
   {
     imgSrc: github,
     imgSrc2: gitlab,
     title: 'Git & GitLab',
     description:
-      'I have been working with GitHub and GitLab for the past 6 years.',
+      'I have been using with GitHub and GitLab for the past 4 years.',
+    rating: 4,
   },
   {
     imgSrc: express,
     title: 'Express',
-    description: 'I have been working with Express for the past 4 years.',
+    description: 'I have used and created Express endpoints and middleware.',
+    rating: 3,
   },
   {
     imgSrc: nodejs,
     title: 'Node.js',
-    description: 'I have been working with Node.js for the past 4 years.',
+    description: 'I have been working with Node.js for the past 3 years.',
+    rating: 3,
   },
   {
     imgSrc: mongodb,
     title: 'MongoDB',
-    description: 'I have been working with MongoDB for the past 4 years.',
+    rating: 2,
+    description:
+      'I have been primarily using MongoDB as primary DB for the past year.',
   },
 ]
 
@@ -140,7 +164,7 @@ const SkillsSection = () => {
   console.log(translate)
 
   return (
-    <div style={{ padding: '5rem 0rem' }}>
+    <div style={{ padding: '2rem 0rem' }}>
       <Skills
       // variants={scrollReveal}
       // ref={element}
@@ -172,6 +196,7 @@ const SkillsSection = () => {
               title={skill.title}
               description={skill.description}
               shift={translate}
+              rating={skill.rating}
             />
           ))}
         </div>
