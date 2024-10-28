@@ -4,9 +4,15 @@ import { useScroll } from '../useScroll'
 import { fade } from '../../animation'
 import SectionTitle from '../SectionTitle'
 import afl from '../../img/afl.png'
+import euroleague from '../../img/euroleague.png'
+import qpr from '../../img/qpr.png'
+import gresini from '../../img/gresini.png'
+import onefootball from '../../img/onefootball.png'
+import infotv from '../../img/infotv.png'
+import cycad from '../../img/cycad.png'
 import aflIcon from '../../img/icons/afl-icon.png'
 import euroleagueIcon from '../../img/icons/euroleague-icon.png'
-import qprIcon from '../../img/icons/qpr-icon.png'
+import qprIcon from '../../img/icons/qpr.png'
 import gresiniIcon from '../../img/icons/gresini-icon.png'
 import onefootballIcon from '../../img/icons/onefootball-icon.png'
 import infotvIcon from '../../img/icons/infotv-icon.png'
@@ -26,7 +32,7 @@ const projectsList = [
   },
   {
     link: 'https://games.euroleaguebasketball.net/',
-    imgSrc: afl,
+    imgSrc: euroleague,
     side: 'left',
     icon: euroleagueIcon,
     brandName: 'Euroleague',
@@ -36,7 +42,7 @@ const projectsList = [
   },
   {
     link: 'https://games.qpr.co.uk/',
-    imgSrc: afl,
+    imgSrc: qpr,
     side: 'right',
     icon: qprIcon,
     brandName: 'QPR',
@@ -46,7 +52,7 @@ const projectsList = [
   },
   {
     link: 'https://fanpower.gresiniracing.com/',
-    imgSrc: afl,
+    imgSrc: gresini,
     side: 'left',
     icon: gresiniIcon,
     brandName: 'Gresini Racing',
@@ -56,7 +62,7 @@ const projectsList = [
   },
   {
     link: 'https://onefootball.com/',
-    imgSrc: afl,
+    imgSrc: onefootball,
     side: 'right',
     icon: onefootballIcon,
     brandName: 'OneFootball',
@@ -66,7 +72,7 @@ const projectsList = [
   },
   {
     link: 'https://infotv.co.za/',
-    imgSrc: afl,
+    imgSrc: infotv,
     side: 'left',
     icon: infotvIcon,
     brandName: 'InfoTV',
@@ -76,7 +82,7 @@ const projectsList = [
   },
   {
     link: 'https://www.cycadestatepolokwane.co.za/',
-    imgSrc: afl,
+    imgSrc: cycad,
     side: 'right',
     icon: cycadIcon,
     brandName: 'Cycad Estate',
@@ -103,10 +109,7 @@ const ProjectsSection = () => {
             {projectsList
               .filter((p) => p.side === 'left')
               .map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  {...project}
-                />
+                <ProjectCard key={index} {...project} />
               ))}
           </div>
         </div>
@@ -114,10 +117,7 @@ const ProjectsSection = () => {
           {projectsList
             .filter((p) => p.side === 'right')
             .map((project, index) => (
-              <ProjectCard
-                key={index}
-                {...project}
-              />
+              <ProjectCard key={index} {...project} />
             ))}
         </div>
       </Projects>

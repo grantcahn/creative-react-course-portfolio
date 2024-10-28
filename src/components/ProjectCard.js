@@ -12,7 +12,12 @@ const ProjectCard = ({ link, imgSrc, icon, title, skills, brandName }) => {
         href={link}
         target="_blank"
         rel="noreferrer"
-        style={{ textDecoration: 'none', height: '100%', color: 'inherit' }}
+        style={{
+          textDecoration: 'none',
+          height: '100%',
+          color: 'inherit',
+          display: 'block',
+        }}
       >
         <div
           style={{
@@ -52,6 +57,8 @@ const ProjectCard = ({ link, imgSrc, icon, title, skills, brandName }) => {
             style={{
               scale: isHovered ? '1.1' : '1',
               transition: '0.4s',
+              filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.7)',
+              display: 'block',
             }}
           />
         </div>
