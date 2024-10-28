@@ -75,6 +75,7 @@ const Card = styled.div`
   gap: 1rem;
   padding: 2.5rem 0rem 0rem;
   border-radius: 1rem;
+  overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   transition: 0.4s;
   cursor: pointer;
@@ -114,11 +115,12 @@ const Card = styled.div`
   .img-wrapper {
     width: 100%;
     height: 40rem;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 1rem;
   }
   .main-img {
     width: 100%;
+    height: 100%;
     object-position: top center;
     object-fit: cover;
     border-radius: 1rem;
