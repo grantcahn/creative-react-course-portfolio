@@ -112,6 +112,10 @@ const AboutMe = styled(GenericSection)`
     align-items: end;
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
+    @media (max-width: 1300px) {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
   }
   .brand-section {
     border-top: 1px solid #777777;
@@ -124,16 +128,30 @@ const AboutMe = styled(GenericSection)`
     p {
       font-weight: 600;
     }
+    @media (max-width: 1300px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
   .brand-logo {
     height: 3.5rem;
     filter: grayscale(100%);
+    @media (max-width: 1300px) {
+      height: 2.5rem;
+    }
+    @media (max-width: 900px) {
+      height: 2rem;
+    }
   }
   .brands {
     display: flex;
+    flex-wrap: wrap;
     gap: 5rem;
     justify-content: center;
     align-items: center;
+    @media (max-width: 900px) {
+      gap: 3rem;
+    }
   }
   h2 {
     padding-bottom: 1rem;
@@ -146,6 +164,11 @@ const SubSection = styled.div`
   flex-direction: column;
   @media (max-width: 1300px) {
     justify-content: center;
+  }
+  @media (max-width: 900px) {
+    h2 {
+      font-size: 3rem;
+    }
   }
   .counter-section {
     display: flex;
@@ -166,6 +189,14 @@ const Counter = styled.div`
     font-size: 1.5rem;
     font-weight: 600;
     max-width: 10rem;
+  }
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
   }
 `
 

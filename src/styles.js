@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 
 export const GenericSection = styled(motion.div)`
   min-height: 90vh;
-  padding: 6rem 2rem;
+  padding: 6rem 4rem;
   color: var(--color-primary);
   @media (max-width: 1300px) {
-    padding: 2rem 2rem;
+    padding: 4rem;
   }
 `
 
@@ -22,13 +22,13 @@ export const Section = styled.div`
 
 export const About = styled(motion.div)`
   min-height: 90vh;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
   color: var(--color-quaternary);
   @media (max-width: 1300px) {
     display: block;
-    padding: 2rem 2rem;
     text-align: center;
   }
 `
@@ -64,6 +64,8 @@ export const Description = styled.div`
     gap: 5rem;
   }
   @media (max-width: 1300px) {
+    position: absolute;
+    bottom: 0;
     padding: 0;
     button {
       margin: 2rem 0rem 5rem 0rem;
@@ -83,6 +85,7 @@ export const Image = styled.div`
 `
 
 export const Hide = styled.div`
+  white-space: nowrap;
   padding-left: 10rem;
   z-index: 2;
 `

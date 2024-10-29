@@ -52,7 +52,7 @@ const Nav = () => {
       <div className="title-nav">
         <h1 className="">
           <p id="logo" href="#home" onClick={(e) => handleScroll(e, 'home')}>
-            FE Developer
+            Portfolio
           </p>
         </h1>
       </div>
@@ -100,6 +100,48 @@ const Nav = () => {
           </li>
         </ul>
       </div>
+      <ul className="links-nav-mobile">
+        <li>
+          <p onClick={(e) => handleScroll(e, 'home')}>Home</p>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: '0%' }}
+            animate={{ width: currentSection === 'home' ? '100%' : '0%' }}
+          />
+        </li>
+        <li>
+          <p onClick={(e) => handleScroll(e, 'about')}>About</p>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: '0%' }}
+            animate={{ width: currentSection === 'about' ? '100%' : '0%' }}
+          />
+        </li>
+        <li>
+          <p onClick={(e) => handleScroll(e, 'skills')}>Skills</p>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: '0%' }}
+            animate={{ width: currentSection === 'skills' ? '100%' : '0%' }}
+          />
+        </li>
+        <li>
+          <p onClick={(e) => handleScroll(e, 'projects')}>Projects</p>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: '0%' }}
+            animate={{ width: currentSection === 'projects' ? '100%' : '0%' }}
+          />
+        </li>
+        <li>
+          <p onClick={(e) => handleScroll(e, 'contact')}>Contact</p>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: '0%' }}
+            animate={{ width: currentSection === 'contact' ? '100%' : '0%' }}
+          />
+        </li>
+      </ul>
     </StyledNav>
   )
 }
@@ -132,7 +174,16 @@ const StyledNav = styled.nav`
     align-items: center;
   }
   .links-nav {
+    display: none;
+    @media (min-width: 900px) {
+      display: flex;
+    }
+  }
+  .links-nav-mobile {
     display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    width: 100vw;
   }
   ul {
     display: flex;

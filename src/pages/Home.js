@@ -22,11 +22,11 @@ const Home = () => {
       <section id="about">
         <AboutSection />
       </section>
-      <section id="skills">
+      {/* <section id="skills">
         <SkillsSection />
-      </section>
+      </section> */}
       <section id="projects">
-          <ProjectsSection />
+        <ProjectsSection />
       </section>
       <section id="contact">
         <FooterSection />

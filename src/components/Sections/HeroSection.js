@@ -5,13 +5,14 @@ import { About, Description, Image, Hide } from '../../styles'
 // Framer Motion
 import { motion } from 'framer-motion'
 import { titleAnim, photoAnim } from '../../animation'
+import styled from 'styled-components'
 
 const HeroSection = () => {
   return (
     <About>
       <Description>
         <motion.div className="header-content">
-          <img
+          <TextureImage
             src={circle}
             alt="guy with a camera"
             style={{ maxWidth: '400px', paddingLeft: '2rem' }}
@@ -32,5 +33,13 @@ const HeroSection = () => {
     </About>
   )
 }
+
+const TextureImage = styled.img`
+  max-width: '400px';
+  padding-left: '2rem';
+  @media (max-width: 1300px) {
+    display: none;
+  }
+`
 
 export default HeroSection

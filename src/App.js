@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Nav />
+      {/* <Nav /> */}
       <AnimatePresence
         exitBeforeEnter
         onExitComplete={() => {
