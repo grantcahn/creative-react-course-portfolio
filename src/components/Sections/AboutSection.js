@@ -41,7 +41,13 @@ const brands = [
 const AboutSection = () => {
   const [element, controls] = useScroll()
   return (
-    <AboutMe variants={fade} animate={controls} initial="hidden" ref={element}>
+    <AboutMe
+      variants={fade}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+      id="about"
+    >
       <div className="aboutme">
         <SectionTitle title={'About Me'} />
         <div className="section-grid">

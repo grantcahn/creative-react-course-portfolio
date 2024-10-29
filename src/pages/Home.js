@@ -16,11 +16,21 @@ const Home = () => {
       initial="hidden"
       animate="show"
     >
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <FooterSection />
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="about">
+        <AboutSection />
+      </section>
+      <section id="skills">
+        <SkillsSection />
+      </section>
+      <section id="projects">
+          <ProjectsSection />
+      </section>
+      <section id="contact">
+        <FooterSection />
+      </section>
     </motion.div>
   )
 }

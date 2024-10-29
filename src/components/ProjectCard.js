@@ -58,7 +58,6 @@ const ProjectCard = ({ link, imgSrc, icon, title, skills, brandName }) => {
               scale: isHovered ? '1.1' : '1',
               transition: '0.4s',
               filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.7)',
-              display: 'block',
             }}
           />
         </div>
@@ -114,17 +113,15 @@ const Card = styled.div`
   }
   .img-wrapper {
     width: 100%;
-    height: 40rem;
+    height: 600px;
     overflow: visible;
     border-radius: 1rem;
   }
   .main-img {
     width: 100%;
-    height: 100%;
     object-position: top center;
     object-fit: cover;
     border-radius: 1rem;
-    display: block;
   }
 `
 const Image = styled.img`

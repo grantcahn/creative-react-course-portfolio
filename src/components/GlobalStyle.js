@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
 	  --color-tertiary: #171717;
       --color-quaternary: #ffffff;
 	  --color-error: #e74c3c;
+      scroll-behavior: smooth;
   }
 
   html {

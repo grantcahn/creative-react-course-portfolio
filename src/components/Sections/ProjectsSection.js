@@ -95,13 +95,14 @@ const projectsList = [
 const ProjectsSection = () => {
   const [element, controls] = useScroll()
   return (
-    <div>
-      <Projects
-        variants={fade}
-        ref={element}
-        animate={controls}
-        initial="hidden"
-      >
+    <Projects
+      variants={fade}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+      id="projects"
+    >
+      <div className="columns">
         <div className="left-section">
           <SectionTitle title={'My portfolio'} />
           <h2>Take a look at the latest projects I’ve worked on</h2>
@@ -120,16 +121,18 @@ const ProjectsSection = () => {
               <ProjectCard key={index} {...project} />
             ))}
         </div>
-      </Projects>
-    </div>
+      </div>
+    </Projects>
   )
 }
 
 const Projects = styled(GenericSection)`
   background-color: var(--color-bg2);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
   .right,
   .left {
     display: flex;
