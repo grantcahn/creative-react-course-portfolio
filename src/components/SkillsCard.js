@@ -2,12 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import StarsRating from './StarsRating'
 
-const SkillsCard = ({ imgSrc, imgSrc2, title, description, shift, rating }) => {
+const SkillsCard = ({ imgSrc, imgSrc2, title, description, rating }) => {
   return (
-    <Card
-      style={{
-        transform: `translateX(${shift}rem)`,
-      }}
+    <Card      
     >
       <div className="img-div">
         <Image src={imgSrc} alt="" />
@@ -30,6 +27,7 @@ const SkillsCard = ({ imgSrc, imgSrc2, title, description, shift, rating }) => {
 
 const Card = styled.div`
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: start;
   min-width: 20rem;

@@ -7,6 +7,7 @@ import { scrollReveal } from '../../animation'
 import SectionTitle from '../SectionTitle'
 import ScrollButton from '../ScrollButton'
 import SkillsCard from '../SkillsCard'
+import Carousel from 'react-multi-carousel'
 
 import html from '../../img/html5.svg'
 import css from '../../img/css.svg'
@@ -133,35 +134,42 @@ const skills = [
   },
 ]
 
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 3840, min: 1920 },
+    items: 5,
+    slidesToSlide: 3,
+    partialVisibilityGutter: 40,
+  },
+  desktop: {
+    breakpoint: { max: 1920, min: 1300 },
+    items: 4,
+    slidesToSlide: 2,
+    partialVisibilityGutter: 30,
+  },
+  tablet: {
+    breakpoint: { max: 1300, min: 1000 },
+    items: 3,
+    slidesToSlide: 2,
+    partialVisibilityGutter: 30,
+  },
+  landscape : {
+    breakpoint: { max: 1000, min: 600 },
+    items: 2,
+    slidesToSlide: 2,
+    partialVisibilityGutter: 30,
+
+  },
+  mobile: {
+    breakpoint: { max: 600, min: 0 },
+    items: 1,
+    partialVisibilityGutter: 30,
+  },
+}
+
 const SkillsSection = () => {
   const [element, controls] = useScroll()
   const [translate, setTranslate] = useState(0)
-
-  const handleScrollButtonClick = (direction) => {
-    if (translate === -220 && direction === 'right') {
-      setTranslate(-224)
-      return
-    }
-    if (translate === -224 && direction === 'right') {
-      setTranslate(0)
-      return
-    }
-    if (translate === -4 && direction === 'left') {
-      setTranslate(0)
-      return
-    }
-    if (translate === 0 && direction === 'left') {
-      setTranslate(-224)
-      return
-    }
-    const newTranslate = direction === 'left' ? translate + 22 : translate - 22
-    console.log(`Old translate: ${translate}, New translate: ${newTranslate}`)
-    setTranslate(newTranslate)
-  }
-
-  console.log(`Current translate: ${translate}`)
-
-  console.log(translate)
 
   return (
     <div style={{ padding: '2rem 0rem' }}>
@@ -171,41 +179,75 @@ const SkillsSection = () => {
       // animate={controls}
       // initial="hidden"
       >
-        <SectionTitle title={'My skills'} />
-        <div className="carousel-buttons">
-          <h2>My extensive list of skills</h2>
-          <div className="chevron-buttons">
-            <ScrollButton
-              direction="left"
-              isActive={false}
-              onClick={() => handleScrollButtonClick('left')}
-            />
-            <ScrollButton
-              direction="right"
-              isActive={true}
-              onClick={() => handleScrollButtonClick('right')}
-            />
+        <div className="top-section">
+          <SectionTitle title={'My skills'} />
+          <div className="carousel-buttons">
+            <h2>My extensive list of skills</h2>
           </div>
         </div>
-        <div className="skills-section">
-          {skills.map((skill, index) => (
-            <SkillsCard
-              key={index}
-              imgSrc={skill.imgSrc}
-              imgSrc2={skill.imgSrc2}
-              title={skill.title}
-              description={skill.description}
-              shift={translate}
-              rating={skill.rating}
-            />
-          ))}
+        <div className="carousel-container">
+          <Carousel
+            partialVisible={true}
+            // autoPlay={this.props.deviceType !== 'mobile' ? true : false}
+            // autoPlaySpeed={1000}
+            // keyBoardControl={true}
+            // customTransition="all .5"
+            // transitionDuration={500}
+            responsive={responsive}
+            // removeArrowOnDeviceType={['tablet', 'mobile']}
+            // deviceType={this.props.deviceType}
+            className="skills-section"
+            sliderClass="carousel-slider"
+            itemClass="carousel-item"
+          >
+            {skills.map((skill, index) => (
+              <SkillsCard
+                key={index}
+                imgSrc={skill.imgSrc}
+                imgSrc2={skill.imgSrc2}
+                title={skill.title}
+                description={skill.description}
+                shift={translate}
+                rating={skill.rating}
+              />
+            ))}
+          </Carousel>
         </div>
       </Skills>
     </div>
   )
 }
 
-const Skills = styled(GenericSection)`
+const Skills = styled.div`
+  min-height: 90vh;
+  padding: 6rem 0rem;
+  color: var(--color-primary);
+  @media (max-width: 1300px) {
+    padding: 4rem 0rem;
+  }
+  @media (max-width: 600px) {
+    padding: 4rem 0rem;
+  }
+  .top-section {
+    padding: 0rem 4rem;
+    @media (max-width: 600px) {
+      padding: 0rem 2rem;
+    }
+  }
+  .skills-section {
+    height: 100%;
+  }
+  .carousel-slider {
+    height: 100%;
+  }
+  .carousel-container {
+    padding: 2rem;
+    height: 40rem;
+  }
+  .carousel-item {
+    padding: 1rem 1.5rem;
+    height: 100%;
+  }
   .chevron-buttons {
     display: flex;
     justify-content: center;
@@ -216,11 +258,14 @@ const Skills = styled(GenericSection)`
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-  }
-  .skills-section {
-    display: flex;
-    gap: 2rem;
-    padding-top: 2rem;
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: end;
+      gap: 0;
+      h2 {
+        font-size: 3rem;
+      }
+    }
   }
   h2 {
     padding-bottom: 1rem;

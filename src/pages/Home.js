@@ -22,15 +22,15 @@ const Home = () => {
       <section id="about">
         <AboutSection />
       </section>
-      {/* <section id="skills">
+      <section id="skills">
         <SkillsSection />
-      </section> */}
-      <section id="projects">
+      </section>
+      {/* <section id="projects">
         <ProjectsSection />
       </section>
       <section id="contact">
         <FooterSection />
-      </section>
+      </section> */}
     </motion.div>
   )
 }

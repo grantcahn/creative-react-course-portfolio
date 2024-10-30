@@ -8,6 +8,9 @@ export const GenericSection = styled(motion.div)`
   @media (max-width: 1300px) {
     padding: 4rem;
   }
+  @media (max-width: 600px) {
+    padding: 4rem 2rem;
+  }
 `
 
 export const Section = styled.div`
@@ -38,11 +41,15 @@ export const Description = styled.div`
   flex: 1;
   background-color: #171717;
   align-items: center;
+  justify-content: center;
   padding: 2rem 0rem;
   height: 100%;
   z-index: 2;
   h2 {
     font-weight: bold;
+    @media (max-width: 600px) {
+      font-size: 3.5rem;
+    }
   }
   h3 {
     font-size: 2.5rem;
@@ -55,16 +62,23 @@ export const Description = styled.div`
     font-size: 1.5rem;
     color: #171717;
     background-color: #fef200;
+    @media (max-width: 600px) {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+    }
   }
   .header-content {
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 5rem;
   }
   @media (max-width: 1300px) {
     position: absolute;
+    top: 0%;
+    left: 50%;
     bottom: 0;
     padding: 0;
     button {
@@ -88,4 +102,7 @@ export const Hide = styled.div`
   white-space: nowrap;
   padding-left: 10rem;
   z-index: 2;
+  @media (max-width: 1300px) {
+    padding: 0;
+  }
 `

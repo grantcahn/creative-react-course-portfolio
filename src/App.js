@@ -11,6 +11,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 // animation
 import { AnimatePresence } from 'framer-motion'
 
+
 function App() {
   const location = useLocation()
   //adjust scroll behaviour
