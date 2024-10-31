@@ -16,7 +16,6 @@ const ProjectCard = ({ link, imgSrc, icon, title, skills, brandName }) => {
           textDecoration: 'none',
           height: '100%',
           color: 'inherit',
-          display: 'block',
         }}
       >
         <div
@@ -71,7 +70,6 @@ const Card = styled.div`
   background-color: var(--color-bg);
   flex-direction: column;
   align-items: start;
-  gap: 1rem;
   padding: 2.5rem 0rem 0rem;
   border-radius: 1rem;
   overflow: hidden;
@@ -81,6 +79,10 @@ const Card = styled.div`
   &:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
     transform: scale(1.03);
+  }
+  a {
+    display: flex;
+    flex-direction: column;
   }
   p {
     font-weight: 600;
@@ -119,9 +121,37 @@ const Card = styled.div`
   }
   .main-img {
     width: 100%;
+    height: 100%;
     object-position: top center;
     object-fit: cover;
     border-radius: 1rem;
+  }
+  @media (max-width: 1200px) {
+    .img-wrapper {
+      height: 500px;
+    }
+    .skills-div {
+      max-width: 100%;
+    }
+    a {
+      gap: 2rem;
+    }
+  }
+  @media (max-width: 900px) {
+    .img-wrapper {
+      height: 450px;
+    }
+    h4 {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 600px) {
+    .img-wrapper {
+      height: 350px;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
   }
 `
 const Image = styled.img`

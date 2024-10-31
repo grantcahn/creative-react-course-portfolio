@@ -115,6 +115,10 @@ const Footer = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
   }
 `
 

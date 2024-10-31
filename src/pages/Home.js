@@ -25,12 +25,12 @@ const Home = () => {
       <section id="skills">
         <SkillsSection />
       </section>
-      {/* <section id="projects">
+      <section id="projects">
         <ProjectsSection />
       </section>
       <section id="contact">
         <FooterSection />
-      </section> */}
+      </section>
     </motion.div>
   )
 }

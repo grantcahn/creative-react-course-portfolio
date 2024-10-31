@@ -132,6 +132,9 @@ const Projects = styled(GenericSection)`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr;
+    }
   }
   .right,
   .left {
@@ -142,6 +145,15 @@ const Projects = styled(GenericSection)`
   h2 {
     padding-bottom: 6rem;
     font-weight: 600;
+    @media (max-width: 1200px) {
+      font-size: 4.5rem;
+    }
+    @media (max-width: 900px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 600px) {
+      font-size: 2.5rem;
+    }
   }
 `
 
