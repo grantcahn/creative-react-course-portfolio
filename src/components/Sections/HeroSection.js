@@ -1,4 +1,4 @@
-import home1 from '../../img/home1.png'
+import home1 from '../../img/home1.jpg'
 import circle from '../../img/circle texture.png'
 
 import { About, Description, Image, Hide } from '../../styles'
@@ -28,7 +28,11 @@ const HeroSection = () => {
         </motion.div>
       </Description>
       <Image>
-        <motion.img variants={photoAnim} src={home1} alt="guy with a camera" />
+        <motion.img
+          variants={photoAnim}
+          src={home1}
+          alt="Portrait of the developer of the portfolio site"
+        />
       </Image>
     </About>
   )
