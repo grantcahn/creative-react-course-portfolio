@@ -94,7 +94,12 @@ export const Image = styled.div`
     width: 100%;
     height: 90vh;
     object-fit: cover;
+    object-position: 100% 24%;
+    position: top;
     display: block;
+    @media (max-width: 600px) {
+      object-position: 50% 100%;
+    }
   }
 `
 

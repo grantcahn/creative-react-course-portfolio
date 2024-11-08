@@ -31,9 +31,9 @@ function App() {
       >
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
-          <Route path="/work" element={<OurWork />} />
+          {/* <Route path="/work" element={<OurWork />} />
           <Route path="/work/:id" element={<MovieDetail />} />
-          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/contact" element={<ContactUs />} /> */}
         </Routes>
       </AnimatePresence>
     </div>
