@@ -3,9 +3,6 @@ import Home from './pages/Home'
 //GlobalStyle
 import GlobalStyle from './components/GlobalStyle'
 import Nav from './components/Nav'
-import ContactUs from './pages/ContactUs'
-import OurWork from './pages/OurWork'
-import MovieDetail from './pages/MovieDetail'
 //Router
 import { Routes, Route, useLocation } from 'react-router-dom'
 // animation

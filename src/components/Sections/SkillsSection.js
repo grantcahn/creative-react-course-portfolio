@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { GenericSection } from '../../styles'
-import { useScroll } from '../useScroll'
-import { scrollReveal } from '../../animation'
 import SectionTitle from '../SectionTitle'
-import ScrollButton from '../ScrollButton'
 import SkillsCard from '../SkillsCard'
 import Carousel from 'react-multi-carousel'
 
@@ -164,8 +160,7 @@ const responsive = {
 }
 
 const SkillsSection = () => {
-  const [element, controls] = useScroll()
-  const [translate, setTranslate] = useState(0)
+  const [translate] = useState(0)
 
   return (
     <div style={{ padding: '2rem 0rem' }}>

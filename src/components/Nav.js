@@ -1,15 +1,11 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 const Nav = () => {
-  const { pathname } = useLocation()
   const [currentSection, setCurrentSection] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [containerRight, setContainerRight] = useState('-100%')
-  const [menuOpacity, setMenuOpacity] = useState('0')
 
   const handleScroll = (e, targetId) => {
     e.preventDefault()
@@ -52,7 +48,6 @@ const Nav = () => {
 
   useEffect(() => {
     setContainerRight(isOpen ? '0%' : '-100%') // Toggles the menu position
-    setMenuOpacity(isOpen ? '1' : '0') // Toggles the menu visibility
   }, [isOpen])
 
   function toggleMenu() {
