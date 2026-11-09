@@ -7,8 +7,8 @@ import location from '../../img/icons/location.svg'
 const contactDetails = [
   {
     icon: email,
-    title: 'grantcahn@gmail.com',
-    link: 'mailto:grantcahn@gmail.com',
+    title: 'g_cahn@hotmail.com',
+    link: 'mailto:g_cahn@hotmail.com',
   },
   {
     icon: phone,
@@ -62,7 +62,7 @@ const FooterSection = () => {
       </div>
       <div className="socials-section">
         <Socials />
-        <p>&copy; 2024 GCode. All rights reserved. </p>
+        <p>&copy; 2026 GCode. All rights reserved. </p>
       </div>
     </Footer>
   )

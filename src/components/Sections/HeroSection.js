@@ -22,7 +22,7 @@ const HeroSection = () => {
             <motion.h3 variants={titleAnim}>MY NAME IS</motion.h3>
             <motion.h2 variants={titleAnim}>GRANT CAHN</motion.h2>
             <motion.h4 variants={titleAnim}>
-              I'M A FRONT END DEVELOPER
+              I'M A FRONT END ENGINEER
             </motion.h4>
           </Hide>
         </motion.div>

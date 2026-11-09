@@ -40,30 +40,24 @@ const brands = [
 
 const AboutSection = () => {
   const [element, controls] = useScroll()
+  const experienceYears = new Date().getFullYear() - 2018
   return (
-    <AboutMe
-      variants={fade}
-      animate={controls}
-      initial="hidden"
-      ref={element}
-      id="about"
-    >
+    <AboutMe variants={fade} animate={controls} initial="hidden" ref={element} id="about">
       <div className="aboutme">
         <SectionTitle title={'About Me'} />
         <div className="section-grid">
           <SubSection>
             <h2>I’ve been developing websites since 2018</h2>
             <p>
-              What started as a hobby turned into a passion. I have been
-              creating websites for the past 6 years. I have also worked on Web3
-              projects, mostly assisting on Front-End, UI/UX work but also
-              helping out with Blockchain development.
+              What started as a hobby turned into a passion. I have been creating websites for the past{' '}
+              {experienceYears} years. I have also worked on Web3 projects, mostly assisting on Front-End, UI/UX work
+              but also helping out with Blockchain development. I also have experience building and maintaining mobile applications using Expo.
             </p>
           </SubSection>
           <SubSection>
             <div className="counter-section">
               <Counter>
-                <h1>6</h1>
+                <h1>{experienceYears}</h1>
                 <h3>Years of experience</h3>
               </Counter>
               <Counter>
@@ -72,12 +66,10 @@ const AboutSection = () => {
               </Counter>
             </div>
             <p>
-              I began my journey with HTML and CSS, and later transitioned to
-              using modern frameworks like React, Next.js, and Svelte. For
-              styling, I rely on TailwindCSS, which has been instrumental in my
-              front-end development work. Additionally, I have experience with
-              back-end technologies such as Express.js, MongoDB, and AWS for
-              static hosting.
+              I began my journey with HTML and CSS, and later transitioned to using modern frameworks like React,
+              Next.js, and Svelte. For styling, I rely mainly on TailwindCSS, which has been instrumental in my front-end
+              development work. Additionally, I have experience with back-end technologies such as Express.js, MongoDB,
+              and AWS, as well as Cadence (Flow Blockchain) and a bit of Solidity experience. 
             </p>
           </SubSection>
         </div>
@@ -87,12 +79,7 @@ const AboutSection = () => {
         <div className="brands">
           {brands.map((brand, index) => (
             <a href={brand.link} target="_blank" rel="noreferrer">
-              <img
-                src={brand.image}
-                alt={brand.name}
-                key={index}
-                className="brand-logo"
-              />
+              <img src={brand.image} alt={brand.name} key={index} className="brand-logo" />
             </a>
           ))}
         </div>
@@ -142,6 +129,10 @@ const AboutMe = styled(GenericSection)`
     @media (max-width: 900px) {
       height: 2rem;
     }
+  }
+  .brand-logo:hover {
+    filter: grayscale(0%);
+    transition: filter 0.3s ease;
   }
   .brands {
     display: flex;

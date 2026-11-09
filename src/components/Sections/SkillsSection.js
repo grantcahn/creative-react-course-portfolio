@@ -27,63 +27,64 @@ import gitlab from '../../img/gitlab.svg'
 import gsap from '../../img/gsap.svg'
 import wordpress from '../../img/wordpress.svg'
 import aws from '../../img/aws.svg'
+import expo from '../../img/expo-logo.svg'
 
 const skills = [
   {
     imgSrc: html,
     imgSrc2: css,
     title: 'HTML & CSS',
-    description: 'I have been working with HTML and CSS for the past 6 years.',
+    description: 'I have been working with HTML and CSS for the past 8 years.',
     rating: 5,
   },
   {
     imgSrc: tailwind,
     title: 'Tailwind CSS',
-    description:
-      'Tailwind CSS has been my go-to CSS framework for the past 2 and a half years.',
+    description: 'Tailwind CSS has been my go-to CSS framework for the past 5 years.',
     rating: 5,
   },
   {
     imgSrc: materialUi,
     title: 'Material UI',
-    description:
-      'I have been using Material UI for the past 2 and a half years.',
+    description: 'I have been using Material UI for the past 4 years.',
     rating: 4,
   },
   {
     imgSrc: javascript,
     imgSrc2: typescript,
     title: 'JavaScript',
-    description:
-      'I have experience using JavaScript as well as Typescript for the past 4 years.',
+    description: 'I have experience using JavaScript as well as Typescript for the past 4 years.',
     rating: 5,
   },
   {
     imgSrc: react,
     title: 'React',
-    description:
-      'I have been working on projects built with React for the past 3 years.',
+    description: 'I have been working on projects built with React for the past 5 years.',
     rating: 5,
   },
   {
     imgSrc: nextjs,
     title: 'Next.js',
-    description: 'I have been working on Next.js for the past 2 years.',
-    rating: 4,
+    description: 'I have been working on Next.js for the past 3 years.',
+    rating: 5,
   },
   {
     imgSrc: svelte,
     title: 'Svelte',
-    description:
-      'I have built a couple of projects using Svelte and SvelteKit.',
+    description: 'I have built projects using Svelte and SvelteKit.',
     rating: 4,
   },
   {
     imgSrc: flow,
     title: 'Flow',
-    description:
-      'I have written a couple of smart contracts using Cadence and worked on some big NFT projects.',
-    rating: 3,
+    description: 'I have written smart contracts using Cadence and worked on some big NFT projects.',
+    rating: 4,
+  },
+  {
+    imgSrc: expo,
+    title: 'Expo',
+    description: 'I have experience building, maintaining and deploying mobile applications using Expo.',
+    rating: 4,
   },
   {
     imgSrc: wordpress,
@@ -93,44 +94,40 @@ const skills = [
   },
   {
     imgSrc: aws,
-    title: 'AWS Hosting',
-    description:
-      'I have some familiarity with AWS hosting and have deployed a couple of static projects on AWS.',
-    rating: 2,
+    title: 'AWS',
+    description: 'I have familiarity with AWS services which include deploying and managing applications.',
+    rating: 3,
   },
   {
     imgSrc: gsap,
     title: 'GSAP',
-    description:
-      'I have built multiple GSAP animations that were used in React projects.',
+    description: 'I have built multiple GSAP animations that were used in React projects.',
     rating: 3,
   },
   {
     imgSrc: github,
     imgSrc2: gitlab,
     title: 'Git & GitLab',
-    description:
-      'I have been using with GitHub and GitLab for the past 4 years.',
+    description: 'I have been using with GitHub and GitLab for the past 6 years.',
     rating: 4,
   },
   {
     imgSrc: express,
     title: 'Express',
-    description: 'I have used and created Express endpoints and middleware.',
-    rating: 3,
+    description: 'I have used and created Express.js functionality including endpoints and middleware.',
+    rating: 4,
   },
   {
     imgSrc: nodejs,
     title: 'Node.js',
-    description: 'I have been working with Node.js for the past 3 years.',
+    description: 'I have been working with Node.js for the past 5 years.',
     rating: 3,
   },
   {
     imgSrc: mongodb,
     title: 'MongoDB',
-    rating: 2,
-    description:
-      'I have been primarily using MongoDB as primary DB for the past year.',
+    rating: 4,
+    description: 'I have been primarily using MongoDB as primary DB for the past 3 years.',
   },
 ]
 
@@ -153,12 +150,11 @@ const responsive = {
     slidesToSlide: 2,
     partialVisibilityGutter: 30,
   },
-  landscape : {
+  landscape: {
     breakpoint: { max: 1000, min: 600 },
     items: 2,
     slidesToSlide: 2,
     partialVisibilityGutter: 30,
-
   },
   mobile: {
     breakpoint: { max: 600, min: 0 },
